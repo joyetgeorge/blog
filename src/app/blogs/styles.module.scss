@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-fira-code);
+
+  .link {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid #2A2E30;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+
+    .date,
+    .views {
+      font-size: 0.75rem;
+      color: #585E60;
+    }
+
+    &:hover {
+      background-color: #212526;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      .title {
+        font-size: 0.9rem;
+        color: #D3D3D3;
+      }
+    }
+  }
+}
