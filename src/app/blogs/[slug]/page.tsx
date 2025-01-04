@@ -4,9 +4,7 @@ import path from 'path'
 import { compileMDX } from 'next-mdx-remote/rsc'
 
 type Props = {
-  params: {
-    slug: string
-  }
+  params: Promise<{ slug: string }>
 }
 
 type Frontmatter = {
@@ -14,8 +12,10 @@ type Frontmatter = {
 }
 
 const Page: FC<Props> = async ({ params }) => {
+  const slug = (await params).slug
+
   const content = await fs.readFile(
-    path.join(process.cwd(), 'src/content', `${params.slug}.mdx`),
+    path.join(process.cwd(), 'src/content', `${slug}.mdx`),
     'utf-8'
   )
 
