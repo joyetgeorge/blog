@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+  text-align: left;
+  background-color: #1D2021;
+  color: #d3d3d3;
+  font-family: var(--font-inter);
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote {
+  margin: 0;
+}
+
+code,
+pre {
+  font-family: monospace, monospace;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+}

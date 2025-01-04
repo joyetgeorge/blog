@@ -1,14 +1,24 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import './globals.css'
+import { Geist_Mono, Fira_Code, Inter } from 'next/font/google'
+import { LayoutRoot } from '@/components/LayoutRoot'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+import '././../styles/reset.scss'
+
+import styles from './layout.module.scss'
+import { Header } from '@/components/Header/Header'
+
+const inter = Inter({
+  variable: '--font-inter',
   subsets: ['latin'],
 })
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
+
+const firaCode = Fira_Code({
+  variable: '--font-fira-code',
   subsets: ['latin'],
 })
 
@@ -23,9 +33,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en" className={styles.container}>
+      <body
+        className={`${geistMono.variable} ${firaCode.variable} ${inter.variable}`}
+      >
+        <LayoutRoot>
+          <Header />
+          {children}
+        </LayoutRoot>
       </body>
     </html>
   )
